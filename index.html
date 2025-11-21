@@ -44,9 +44,6 @@
         <div class="question">2. Write a program to find maximum of three numbers.</div>
         <pre class="code">max3(A,B,C,Max) :- Max is max(A, max(B,C)).</pre>
 
-        <div class="question">3. Write a program to calculate sum of 1 to N.</div>
-        <pre class="code">sum_n(1,1).
-sum_n(N,Sum) :- N > 1, N1 is N-1, sum_n(N1,Sum1), Sum is Sum1 + N.</pre>
       </details>
 
       <details>
@@ -54,10 +51,8 @@ sum_n(N,Sum) :- N > 1, N1 is N-1, sum_n(N1,Sum1), Sum is Sum1 + N.</pre>
         <div class="question">1. Area & Perimeter of Circle</div>
         <pre class="code">circle(R, Area, Perimeter) :- Area is 3.14*R*R, Perimeter is 2*3.14*R.</pre>
 
-        <div class="question">2. Check divisible by 4</div>
-        <pre class="code">divisible_by_4(N) :- 0 is N mod 4.</pre>
 
-        <div class="question">3. Sum of numbers between two limits</div>
+        <div class="question">2. Sum of numbers between two limits</div>
         <pre class="code">sum_range(N1,N1,N1).
 sum_range(N1,N2,Sum) :- N1 < N2, N3 is N2-1, sum_range(N1,N3,Sum1), Sum is Sum1 + N2.</pre>
       </details>
@@ -67,11 +62,8 @@ sum_range(N1,N2,Sum) :- N1 < N2, N3 is N2-1, sum_range(N1,N3,Sum1), Sum is Sum1 
         <div class="question">1. Convert years into minutes</div>
         <pre class="code">year_to_minutes(Y, M) :- M is Y * 365 * 24 * 60.</pre>
 
-        <div class="question">2. Odd / Even</div>
-        <pre class="code">is_even(N) :- 0 is N mod 2.
-is_odd(N) :- 1 is N mod 2.</pre>
 
-        <div class="question">3. Print series from 1 to N</div>
+        <div class="question">2. Print series from 1 to N</div>
         <pre class="code">series(N) :- series_helper(1,N).
 series_helper(I,N) :- I =< N, write(I), nl, I1 is I+1, series_helper(I1,N).
 series_helper(I,N) :- I > N.</pre>
@@ -86,12 +78,6 @@ series_helper(I,N) :- I > N.</pre>
         <pre class="code">result(Per,'Pass') :- Per >= 40.
 result(Per,'Fail') :- Per < 40.</pre>
 
-        <div class="question">3. Series from N to 1</div>
-        <pre class="code">series(N) :- N > 0, write(N), nl, N1 is N-1, series(N1).
-series(0).</pre>
-
-        <div class="question">4. Print table of a number</div>
-        <pre class="code">table(N) :- between(1,10,X), A is N*X, write(N),write('*'),write(X),write('='),write(A),nl.</pre>
       </details>
     </section>
 
