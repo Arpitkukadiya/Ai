@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Mid Exam — Prolog Solutions by Vishruti Malaviya</title>
+  <style>
+    body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; background: #eef2f5; color: #111; }
+    header.hero { background:#4c6fff; color:white; padding:45px 20px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.2);}    
+    header h1 { margin:6px 0; }
+    header .lead { font-size:1.1rem; max-width:700px; margin:15px auto; }
+    main.container { max-width:1000px; margin:30px auto; padding:20px; }
+    h2 { margin-top:35px; border-left:6px solid #4c6fff; padding-left:10px; }
+    details { margin-bottom:22px; border:1px solid #ddd; border-radius:6px; background:white; box-shadow:0 2px 5px rgba(0,0,0,0.1);}    
+    summary { padding:12px; font-weight:700; font-size:1.05rem; background:#dde5ff; cursor:pointer; border-radius:6px 6px 0 0; }
+    .question { background:#f5f7fc; padding:10px; border-left:4px solid #4c6fff; font-weight:600; margin-top:12px; }
+    pre.code { background:#0b1220; color:#dbeafe; padding:14px; border-radius:6px; overflow-x:auto; margin:0; font-size:0.95rem; }
+    footer.footer { background:#1b1b1b; color:#bbb; text-align:center; padding:20px; margin-top:40px; font-size:0.9rem; }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>AI Mid Exam — All Sets (Prolog Solutions)</h1>
+      <h1>Vishruti Malaviya</h1>
+      <p class="lead">All exam sets solved with clean Prolog code. Family tree knowledge bases included.</p>
+    </div>
+  </header>
+
+  <main class="container content">
+    <section id="overview">
+      <h2>Overview</h2>
+      <p>This page includes SET‑1 to SET‑4 with questions and Prolog programs. Also includes family tree files.</p>
+    </section>
+
+    <section id="sets">
+      <h2>Sets & Solutions</h2>
+
+      <details open>
+        <summary>SET‑1 Questions & Answers</summary>
+        <div class="question">1. Write a program to calculate square and cube of a given number.</div>
+        <pre class="code">square_cube(N, S, C) :- S is N*N, C is N*N*N.</pre>
+
+        <div class="question">2. Write a program to find maximum of three numbers.</div>
+        <pre class="code">max3(A,B,C,Max) :- Max is max(A, max(B,C)).</pre>
+
+        <div class="question">3. Write a program to calculate sum of 1 to N.</div>
+        <pre class="code">sum_n(1,1).
+sum_n(N,Sum) :- N > 1, N1 is N-1, sum_n(N1,Sum1), Sum is Sum1 + N.</pre>
+      </details>
+
+      <details>
+        <summary>SET‑2 Questions & Answers</summary>
+        <div class="question">1. Area & Perimeter of Circle</div>
+        <pre class="code">circle(R, Area, Perimeter) :- Area is 3.14*R*R, Perimeter is 2*3.14*R.</pre>
+
+        <div class="question">2. Check divisible by 4</div>
+        <pre class="code">divisible_by_4(N) :- 0 is N mod 4.</pre>
+
+        <div class="question">3. Sum of numbers between two limits</div>
+        <pre class="code">sum_range(N1,N1,N1).
+sum_range(N1,N2,Sum) :- N1 < N2, N3 is N2-1, sum_range(N1,N3,Sum1), Sum is Sum1 + N2.</pre>
+      </details>
+
+      <details>
+        <summary>SET‑3 Questions & Answers</summary>
+        <div class="question">1. Convert years into minutes</div>
+        <pre class="code">year_to_minutes(Y, M) :- M is Y * 365 * 24 * 60.</pre>
+
+        <div class="question">2. Odd / Even</div>
+        <pre class="code">is_even(N) :- 0 is N mod 2.
+is_odd(N) :- 1 is N mod 2.</pre>
+
+        <div class="question">3. Print series from 1 to N</div>
+        <pre class="code">series(N) :- series_helper(1,N).
+series_helper(I,N) :- I =< N, write(I), nl, I1 is I+1, series_helper(I1,N).
+series_helper(I,N) :- I > N.</pre>
+      </details>
+
+      <details>
+        <summary>SET‑4 Questions & Answers</summary>
+        <div class="question">1. Circle area & perimeter</div>
+        <pre class="code">circle(R, Area, Perimeter) :- Area is 3.14*R*R, Perimeter is 2*3.14*R.</pre>
+
+        <div class="question">2. Student Pass/Fail</div>
+        <pre class="code">result(Per,'Pass') :- Per >= 40.
+result(Per,'Fail') :- Per < 40.</pre>
+
+        <div class="question">3. Series from N to 1</div>
+        <pre class="code">series(N) :- N > 0, write(N), nl, N1 is N-1, series(N1).
+series(0).</pre>
+
+        <div class="question">4. Print table of a number</div>
+        <pre class="code">table(N) :- between(1,10,X), A is N*X, write(N),write('*'),write(X),write('='),write(A),nl.</pre>
+      </details>
+    </section>
+
+    <section id="family1">
+      <h2>Family Tree — ass3to2.pl</h2>
+      <pre class="code">% Family Tree 1
+male(tom). male(bob). male(peter). male(pat). male(jim).
+female(pam). female(liz). female(ann).
+parent(pam,bob). parent(tom,bob). parent(tom,liz).
+parent(bob,ann). parent(bob,peter). parent(bob,pat). parent(pat,jim).</npre>
+    </section>
+
+    <section id="family2">
+      <h2>Family Tree — ass3to3.pl</h2>
+      <pre class="code">% Family Tree 2
+male(jack). male(david). male(ray). male(john). male(peter).
+female(karan). female(amy). female(susan). female(liza). female(mary).
+parent(karan,ray). parent(karan,susan). parent(jack,ray). parent(jack,susan).</pre>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Made with ❤️ — Prolog Solutions</p>
+  </footer>
+
+</body>
+</html>
